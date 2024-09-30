@@ -11,7 +11,7 @@ import SwiftUI
 struct uitest2App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView()//main menu
         }
     }
 }

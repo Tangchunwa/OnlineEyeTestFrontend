@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C27AF702CA909510088EBFB /* too_close.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C27AF6F2CA909510088EBFB /* too_close.mp3 */; };
+		5C27AF712CA909510088EBFB /* too_close.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C27AF6F2CA909510088EBFB /* too_close.mp3 */; };
+		5C27AF722CA909510088EBFB /* too_close.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C27AF6F2CA909510088EBFB /* too_close.mp3 */; };
 		5C47F7DE2CA56034001BF41F /* uitest2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C47F7DD2CA56034001BF41F /* uitest2App.swift */; };
 		5C47F7E02CA56034001BF41F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C47F7DF2CA56034001BF41F /* ContentView.swift */; };
 		5C47F7E22CA56038001BF41F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C47F7E12CA56038001BF41F /* Assets.xcassets */; };
@@ -36,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C27AF6F2CA909510088EBFB /* too_close.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = too_close.mp3; sourceTree = "<group>"; };
 		5C47F7DA2CA56034001BF41F /* uitest2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uitest2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C47F7DD2CA56034001BF41F /* uitest2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uitest2App.swift; sourceTree = "<group>"; };
 		5C47F7DF2CA56034001BF41F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		5C47F7E32CA56038001BF41F /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				5C27AF6F2CA909510088EBFB /* too_close.mp3 */,
 				5C47F7E42CA56038001BF41F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -239,6 +244,7 @@
 			files = (
 				5C47F7E52CA56038001BF41F /* Preview Assets.xcassets in Resources */,
 				5C47F7E22CA56038001BF41F /* Assets.xcassets in Resources */,
+				5C27AF702CA909510088EBFB /* too_close.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C27AF712CA909510088EBFB /* too_close.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C27AF722CA909510088EBFB /* too_close.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

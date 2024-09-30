@@ -1,10 +1,14 @@
 import SwiftUI
+import AVFoundation
 
 struct VisionTestView: View {
     @State private var currentSize = 1.0
     @State private var result = ""
     @State private var distance: Float = 0.0
     @State private var currentLetter = "E"
+    @State private var isTooClose = false
+    @State private var audioPlayer: AVAudioPlayer?
+    @State private var lastAudioPlayTime: Date?
     
     let sizes = [1.0, 0.8, 0.6, 0.4, 0.2]
     let letters = ["E", "F", "P", "T", "O", "Z", "L", "P", "E", "D"]
@@ -22,6 +26,12 @@ struct VisionTestView: View {
                     .font(.system(size: 100 * currentSize))
                     .padding()
                 
+                if distance < 0.4 {
+                    Text("You are too close!")
+                        .foregroundColor(.red)
+                        .padding()
+                }
+                
                 Button("I can see this") {
                     if let index = sizes.firstIndex(of: currentSize), index < sizes.count - 1 {
                         currentSize = sizes[index + 1]
@@ -30,10 +40,12 @@ struct VisionTestView: View {
                         result = "Your vision is excellent!"
                     }
                 }
+                .disabled(distance < 0.4) // Disable button if too close
                 
                 Button("I can't see this") {
                     result = "Your vision score is \(String(format: "%.1f", 1.0 / currentSize))"
                 }
+                .disabled(distance < 0.4) // Disable button if too close
                 
                 Text(result)
                     .padding()
@@ -45,6 +57,41 @@ struct VisionTestView: View {
                     .cornerRadius(10)
             }
         }
+        .onChange(of: distance) { newValue in
+            if newValue < 0.4 {
+                playTooCloseAudio()
+            }
+        }
+        .onAppear {
+            setupAudioPlayer()
+        }
+    }
+    
+    private func setupAudioPlayer() {
+        guard let soundURL = Bundle.main.url(forResource: "too_close", withExtension: "mp3") else {
+            print("Audio file not found")
+            return
+        }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            audioPlayer?.prepareToPlay()
+        } catch {
+            print("Error setting up audio player: \(error.localizedDescription)")
+        }
+    }
+    
+    private func playTooCloseAudio() {
+        let currentTime = Date()
+        
+        // Check if 3 seconds have passed since the last audio play
+        if let lastPlayTime = lastAudioPlayTime,
+           currentTime.timeIntervalSince(lastPlayTime) < 3 {
+            return
+        }
+        
+        audioPlayer?.play()
+        lastAudioPlayTime = currentTime
     }
 }
 struct MacularDegenerationTestView: View {

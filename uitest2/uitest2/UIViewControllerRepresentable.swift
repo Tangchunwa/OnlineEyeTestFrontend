@@ -18,7 +18,7 @@ struct FaceDistanceView: UIViewControllerRepresentable {
 class FaceDistanceViewController: UIViewController, ARSessionDelegate {
     var sceneView: ARSCNView!
     var arSession: ARSession!
-    var lastDistance: Float = 0.0
+    var lastDistance: Float = 1.0
     let smoothingFactor: Float = 0.1
     var distanceUpdated: ((Float) -> Void)?
     var hideButton: UIButton!
