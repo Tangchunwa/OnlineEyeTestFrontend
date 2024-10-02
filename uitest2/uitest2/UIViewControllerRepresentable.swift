@@ -3,12 +3,14 @@ import ARKit
 
 struct FaceDistanceView: UIViewControllerRepresentable {
     @Binding var distance: Float
+    @ObservedObject var faceDistanceManager: FaceDistanceManager
     
     func makeUIViewController(context: Context) -> FaceDistanceViewController {
         let controller = FaceDistanceViewController()
         controller.distanceUpdated = { newDistance in
             self.distance = newDistance
         }
+        controller.faceDistanceManager = faceDistanceManager
         return controller
     }
     
@@ -21,7 +23,7 @@ class FaceDistanceViewController: UIViewController, ARSessionDelegate {
     var lastDistance: Float = 1.0
     let smoothingFactor: Float = 0.1
     var distanceUpdated: ((Float) -> Void)?
-    var hideButton: UIButton!
+    var faceDistanceManager: FaceDistanceManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,19 +38,6 @@ class FaceDistanceViewController: UIViewController, ARSessionDelegate {
         
         let configuration = ARFaceTrackingConfiguration()
         arSession.run(configuration, options: [])
-        
-        // Add hide button
-        hideButton = UIButton(type: .system)
-        hideButton.setTitle("Show Camera", for: .normal)  // Set initial title to "Show Camera"
-        hideButton.addTarget(self, action: #selector(toggleCameraVisibility), for: .touchUpInside)
-        hideButton.frame = CGRect(x: 20, y: 50, width: 100, height: 50)
-        self.view.addSubview(hideButton)
-    }
-    
-    @objc func toggleCameraVisibility() {
-        sceneView.isHidden.toggle()
-        let buttonTitle = sceneView.isHidden ? "Show Camera" : "Hide Camera"
-        hideButton.setTitle(buttonTitle, for: .normal)
     }
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
@@ -74,5 +63,7 @@ class FaceDistanceViewController: UIViewController, ARSessionDelegate {
         faceNode.simdTransform = faceAnchor.transform
         sceneView.scene.rootNode.childNodes.forEach { $0.removeFromParentNode() }
         sceneView.scene.rootNode.addChildNode(faceNode)
+        
+        sceneView.isHidden = faceDistanceManager?.isCameraHidden ?? true
     }
 }

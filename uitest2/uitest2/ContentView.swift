@@ -2,21 +2,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView {
-            VisionTestView()
-                .tabItem {
+        NavigationView {
+            List {
+                NavigationLink(destination: VisionTestView()) {
                     Label("Vision Test", systemImage: "eye")
                 }
-            
-            MacularDegenerationTestView()
-                .tabItem {
+                NavigationLink(destination: MacularDegenerationTestView()) {
                     Label("Macular Test", systemImage: "eye.trianglebadge.exclamationmark")
                 }
-            
-            ColorBlindnessTestView()
-                .tabItem {
+                NavigationLink(destination: ColorBlindnessTestView()) {
                     Label("Color Test", systemImage: "eyedropper.halffull")
                 }
+            }
+            .navigationBarTitle("Visual Tests")
         }
+        .preferredColorScheme(.light)
     }
 }
