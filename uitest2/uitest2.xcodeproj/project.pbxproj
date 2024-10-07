@@ -52,6 +52,7 @@
 		5C47F7FA2CA56039001BF41F /* uitest2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uitest2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5C47F8072CA5607B001BF41F /* VisionTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionTestView.swift; sourceTree = "<group>"; };
 		5C47F8092CA5622F001BF41F /* UIViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		5CE0FE5C2CAECF37004B77E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +103,7 @@
 		5C47F7DC2CA56034001BF41F /* uitest2 */ = {
 			isa = PBXGroup;
 			children = (
+				5CE0FE5C2CAECF37004B77E4 /* Info.plist */,
 				5C47F7DD2CA56034001BF41F /* uitest2App.swift */,
 				5C47F7DF2CA56034001BF41F /* ContentView.swift */,
 				5C47F7E12CA56038001BF41F /* Assets.xcassets */,
@@ -441,6 +443,12 @@
 				DEVELOPMENT_TEAM = 3Y8DX3285Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = uitest2/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to measure the distance between your face and the device for accurate vision testing.\n";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to the camera to measure the distance between your face and the device for accurate vision testing.\n";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app uses speech recognition to allow you to read the letters aloud during the vision test.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -470,6 +478,12 @@
 				DEVELOPMENT_TEAM = 3Y8DX3285Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = uitest2/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to measure the distance between your face and the device for accurate vision testing.\n";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to the camera to measure the distance between your face and the device for accurate vision testing.\n";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app uses speech recognition to allow you to read the letters aloud during the vision test.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
